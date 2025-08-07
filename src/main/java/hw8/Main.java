@@ -1,3 +1,5 @@
+package hw8;
+
 public class Main {
     public static void main(String[] args) {
         GetInfo.getName(new Circle(new Position(10, 15.2), 15));

@@ -1,3 +1,4 @@
+package hw8;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,7 @@ public class Circle extends Shape implements Fillable, Rotatable, Scalable {
     private double radius;
 
     public Circle(Position position, double radius) {
-        super("Circle", position);
+        super("hw8.Circle", position);
         this.radius = radius;
     }
 
@@ -41,6 +42,6 @@ public class Circle extends Shape implements Fillable, Rotatable, Scalable {
 
     @Override
     public void printPosition() {
-        System.out.println("Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
+        System.out.println("hw8.Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
     }
 }
