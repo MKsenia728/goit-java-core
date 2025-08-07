@@ -1,3 +1,5 @@
+package hw8;
+
 import lombok.Setter;
 
 @Setter
@@ -5,7 +7,7 @@ public class Line extends Shape implements Moveable, Rotatable, Scalable {
     private double length;
 
     public Line(Position position, double length) {
-        super("Line", position);
+        super("hw8.Line", position);
         this.length = length;
     }
 
@@ -28,6 +30,6 @@ public class Line extends Shape implements Moveable, Rotatable, Scalable {
 
     @Override
     public void printPosition() {
-        System.out.println("Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
+        System.out.println("hw8.Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
     }
 }

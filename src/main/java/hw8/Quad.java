@@ -1,12 +1,14 @@
+package hw8;
+
 import lombok.Setter;
 
 @Setter
-public class Quad extends Shape implements Moveable, Fillable, Rotatable, Scalable{
+public class Quad extends Shape implements Moveable, Fillable, Rotatable, Scalable {
     private Position position;
     private double side;
 
     public Quad(Position position, double side) {
-        super("Quad", position);
+        super("hw8.Quad", position);
         this.position = position;
         this.side = side;
     }
@@ -35,6 +37,6 @@ public class Quad extends Shape implements Moveable, Fillable, Rotatable, Scalab
 
     @Override
     public void printPosition() {
-        System.out.println("Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
+        System.out.println("hw8.Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
     }
 }

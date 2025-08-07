@@ -1,3 +1,5 @@
+package hw8;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,7 +9,7 @@ public class Cube extends Shape implements Rotatable, Fillable, Scalable {
     private double side;
 
     public Cube(Position3D position, double side) {
-        super("Cube", position);
+        super("hw8.Cube", position);
         this.side = side;
     }
 
@@ -30,7 +32,7 @@ public class Cube extends Shape implements Rotatable, Fillable, Scalable {
     @Override
     public void printPosition() {
         Position3D pos3D = (Position3D) position;
-        System.out.println("Position " + this.getName() + ": X - " + pos3D.getX() + ", Y: - " + pos3D.getY() + ", Z - " + pos3D.getZ());
+        System.out.println("hw8.Position " + this.getName() + ": X - " + pos3D.getX() + ", Y: - " + pos3D.getY() + ", Z - " + pos3D.getZ());
         ;
     }
 }

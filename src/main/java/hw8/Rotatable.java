@@ -1,3 +1,5 @@
+package hw8;
+
 public interface Rotatable {
     default void rotate(int degrees) {
         if (degrees < -360 || degrees > 360) {

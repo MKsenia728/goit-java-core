@@ -1,10 +1,12 @@
+package hw8;
+
 import lombok.Setter;
 
 @Setter
-public class Point extends Shape implements Moveable{
+public class Point extends Shape implements Moveable {
 
     public Point(Position position) {
-        super("Point", position);
+        super("hw8.Point", position);
     }
 
     @Override
@@ -15,6 +17,6 @@ public class Point extends Shape implements Moveable{
 
     @Override
     public void printPosition() {
-        System.out.println("Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
+        System.out.println("hw8.Position " + this.getName() + ": X - " + this.position.getX() + ", Y: - " + this.position.getY());
     }
 }

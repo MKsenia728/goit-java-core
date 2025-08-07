@@ -1,3 +1,5 @@
+package hw8;
+
 import lombok.Getter;
 import lombok.Setter;
 
