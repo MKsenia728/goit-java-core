@@ -19,7 +19,12 @@ public class MyLinkedListTest {
         myLinkedList.add("5");
         myLinkedList.add("6");
         print("Add to LinkedList 6 el");
+        print("GET - element with index 0 is: " + myLinkedList.get(0));
+        print("GET - element with index 1 is: " + myLinkedList.get(1));
+        print("GET - element with index 2 is: " + myLinkedList.get(2));
         print("GET - element with index 3 is: " + myLinkedList.get(3));
+        print("GET - element with index 4 is: " + myLinkedList.get(4));
+        print("GET - element with index 5 is: " + myLinkedList.get(5));
         myLinkedList.remove(2);
         print("LinkedList after delete element with index 2 - REMOVE");
         myLinkedList.remove(myLinkedList.size()-1);

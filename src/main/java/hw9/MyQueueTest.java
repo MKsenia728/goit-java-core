@@ -17,6 +17,9 @@ public class MyQueueTest {
         print("Add to MyQueue 4 el");
         print("work PEEK, first element is: " + myQueue.peek());
         print("work POLL, first element is: " + myQueue.poll());
+        print("work POLL, first element is: " + myQueue.poll());
+        print("work POLL, first element is: " + myQueue.poll());
+        print("work POLL, first element is: " + myQueue.poll());
         myQueue.clear();
         print("MyQueue after clear");
     }

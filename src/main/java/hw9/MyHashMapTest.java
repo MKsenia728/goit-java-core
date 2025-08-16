@@ -22,6 +22,7 @@ public class MyHashMapTest {
         print("Add 5 element in HashMap, 2 with the same key ivan@ivan.com");
 
         myHashMap.remove("anna@ivan.com");
+//        myHashMap.remove("ivan@ivan.com");
         print("Remove element with key anna@ivan.com ");
 
         print("Get element value with key \"olena@ivan.com\" - " + myHashMap.get("olena@ivan.com"));
@@ -33,8 +34,8 @@ public class MyHashMapTest {
             myHashMap.put(String.valueOf(i*2 + i), "name" + i*10);
         }
         print("test working ");
-        System.out.println(" Amount of backed: " + myHashMap.size);
-        for (int i = 0; i < myHashMap.size; i++) {
+        System.out.println(" Amount of backed: " + myHashMap.getLength());
+        for (int i = 0; i < myHashMap.getLength(); i++) {
             System.out.println("Backed : " + i + " length of list in backed : " + myHashMap.list[i].size());
         }
     }

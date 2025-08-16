@@ -3,13 +3,13 @@ package hw9;
 import java.util.Arrays;
 
 public class MyArrayCollection {
-    Object[] list;
-    static int DEFAULT_SIZE = 10;
-    static int DEFAULT_CHANGE_RATE = 2;
-    static float DEFAULT_CHANGE_THRESHOLD = 0.7f;
-    int size;
-    int changeRate;
-    int pointer;
+    protected Object[] list;
+    private static final int DEFAULT_SIZE = 10;
+    private static final int DEFAULT_CHANGE_RATE = 2;
+    private static final float DEFAULT_CHANGE_THRESHOLD = 0.7f;
+    protected int size;
+    protected int changeRate;
+    protected int pointer;
 
     public MyArrayCollection() {
         size = DEFAULT_SIZE;
@@ -25,13 +25,13 @@ public class MyArrayCollection {
         pointer = -1;
     }
 
-    void increase() {
+    protected void increase() {
         int newSize = size * changeRate;
         list = Arrays.copyOf(list, newSize);
         size = newSize;
     }
 
-    boolean needIncrease() {
+    protected boolean needIncrease() {
         return (pointer >= size * DEFAULT_CHANGE_THRESHOLD);
     }
 

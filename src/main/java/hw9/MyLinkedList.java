@@ -1,8 +1,11 @@
 package hw9;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class MyLinkedList<T> implements MyListCollection<T> {
-    private Node2<T> head;
-    private Node2<T> tail;
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     public MyLinkedList() {
@@ -13,7 +16,7 @@ public class MyLinkedList<T> implements MyListCollection<T> {
         if (head == null) {
             System.out.println("No data");
         } else {
-            Node2<T> currentNode2 = head;
+            Node<T> currentNode2 = head;
             do {
                 System.out.print(currentNode2.getData() + " ");
                 currentNode2 = currentNode2.getNext();
@@ -23,18 +26,14 @@ public class MyLinkedList<T> implements MyListCollection<T> {
 
     @Override
     public void add(T value) {
-        Node2<T> newNode2 = new Node2<>(value);
+        Node<T> newNode = new Node<>(value);
         if (head == null) {
-            head = newNode2;
-        } else if (tail == null) {
-            tail = newNode2;
-            tail.setPrevious(head);
-            head.setNext(tail);
+            head = newNode;
         } else {
-            tail.setNext(newNode2);
-            newNode2.setPrevious(tail);
-            tail = newNode2;
+            tail.setNext(newNode);
+            newNode.setPrevious(tail);
         }
+        tail = newNode;
         size++;
     }
 
@@ -50,9 +49,9 @@ public class MyLinkedList<T> implements MyListCollection<T> {
                 tail.getPrevious().setNext(null);
                 tail = tail.getPrevious();
             } else {
-                Node2<T> deletedNode2 = getNodeByIndex(index);
-                deletedNode2.getPrevious().setNext(deletedNode2.getNext());
-                deletedNode2.getNext().setPrevious(deletedNode2.getPrevious());
+                Node<T> deletedNode = getNodeByIndex(index);
+                deletedNode.getPrevious().setNext(deletedNode.getNext());
+                deletedNode.getNext().setPrevious(deletedNode.getPrevious());
             }
             size--;
         }
@@ -84,19 +83,31 @@ public class MyLinkedList<T> implements MyListCollection<T> {
         return true;
     }
 
-    private Node2<T> getNodeByIndex(int index) {
-        Node2<T> currentdNode2;
+    private Node<T> getNodeByIndex(int index) {
+        Node<T> currentdNode;
         if (index <= size / 2) { //start from head
-            currentdNode2 = head;
-            for (int i = 1; i <= index; i++) {
-                currentdNode2 = currentdNode2.getNext();
+            currentdNode = head;
+            for (int i = 0; i < index; i++) {
+                currentdNode = currentdNode.getNext();
             }
         } else { //start from tail
-            currentdNode2 = tail;
-            for (int i = size; i >= index; i--) {
-                currentdNode2 = currentdNode2.getPrevious();
+            currentdNode = tail;
+            for (int i = size-1; i > index; i--) {
+                currentdNode = currentdNode.getPrevious();
             }
         }
-        return currentdNode2;
+        return currentdNode;
+    }
+
+    @Setter
+    @Getter
+    public class Node<V> {
+        private V data;
+        private Node<V> next;
+        private Node<V> previous;
+
+        public Node(V data) {
+            this.data = data;
+        }
     }
 }

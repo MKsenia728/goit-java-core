@@ -8,10 +8,19 @@ import lombok.Setter;
 public class Node<K, V> {
     private K key;
     private V value;
-    private Node<K, V> next;
+    private Node<K,V> next;
 
     public Node(K key, V value) {
         this.key = key;
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "key=" + key +
+                ", value=" + value +
+                ", next=" + next +
+                '}';
     }
 }

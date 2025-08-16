@@ -21,18 +21,17 @@ public class SingleLinkedList<K, V> {
     }
 
     public void remove(K key) {
-        if (size == 1) {
-            if (head.getKey().equals(key)) {
+        if (head.getKey().equals(key)) {
+            if (size == 1) {
                 head = null;
-                size = 0;
+            } else {
+                head = head.getNext();
             }
-        } else {
+            size--;
+        } else if (size > 1) {
             Node<K, V> previousNode = getPreviousNodeByKey(key);
             if (previousNode != null) {
                 previousNode.setNext(previousNode.getNext().getNext());
-                previousNode.getNext().setNext(null);
-                previousNode.getNext().setKey(null);
-                previousNode.getNext().setValue(null);
                 size--;
             }
         }
@@ -41,7 +40,9 @@ public class SingleLinkedList<K, V> {
     public boolean contains(K key) {
         Node<K, V> currentNode = head;
         while (currentNode != null) {
-            if (currentNode.getKey().equals(key)) return true;
+            if (currentNode.getKey().equals(key)) {
+                return true;
+            }
             currentNode = currentNode.getNext();
         }
         return false;
@@ -71,13 +72,13 @@ public class SingleLinkedList<K, V> {
     }
 
     public V get(K key) {
-        if (size == 1) {
-            if (head.getKey().equals(key)) return head.getValue();
-            else return null;
-        }
-        Node<K, V> previousNode = getPreviousNodeByKey(key);
-        if (previousNode != null) {
-            return previousNode.getNext().getValue();
+        if (head != null && head.getKey().equals(key)) {
+            return head.getValue();
+        } else {
+            Node<K, V> previousNode = getPreviousNodeByKey(key);
+            if (previousNode != null) {
+                return previousNode.getNext().getValue();
+            }
         }
         return null;
     }
