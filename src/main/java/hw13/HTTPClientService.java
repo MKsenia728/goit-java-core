@@ -2,7 +2,7 @@ package hw13;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import hw13.DTO.*;
+import hw13.dto.*;
 
 import java.io.FileWriter;
 import java.io.IOException;

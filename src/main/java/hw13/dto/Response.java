@@ -1,4 +1,4 @@
-package hw13.DTO;
+package hw13.dto;
 
 import lombok.Data;
 

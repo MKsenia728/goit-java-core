@@ -1,6 +1,6 @@
 package hw13;
 
-import hw13.DTO.*;
+import hw13.dto.*;
 
 import java.io.IOException;
 import java.util.List;
